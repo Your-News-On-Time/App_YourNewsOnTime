@@ -26,8 +26,7 @@ class MainActivity : AppCompatActivity() {
         // Encuentra el botón de inicio y configura el listener
         val getStartedButton: Button = findViewById(R.id.get_started_button)
         getStartedButton.setOnClickListener {
-            val intent = Intent(this, AuthActivity::class.java)
-            setContentView(R.layout.activity_auth)
+            setContentView(R.layout.activity_register)
         }
     }
 }

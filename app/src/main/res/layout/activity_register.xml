@@ -2,14 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    tools:context=".RegisterActivity">
+    android:layout_width="match_parent"
+             android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="798dp"
-        android:layout_height="1278dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
@@ -18,12 +16,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Space
-            android:layout_width="10dp"
-            android:layout_height="wrap_content" />
-
         <EditText
-            android:id="@+id/editTextTextEmailAddress"
+            android:id="@+id/EmailEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -32,29 +26,51 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="10dp" />
+            android:layout_height="8dp" />
 
         <EditText
-            android:id="@+id/passwordEditText"
+            android:id="@+id/PasswordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="password"
+            android:hint="Password"
             android:inputType="textPassword" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/signUpButton"
+                android:id="@+id/SingUpbutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@color/button"
+                android:text="Sign Up" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/LogInpButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="Login" />
 
         </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/googleButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Google" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
