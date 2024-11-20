@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "262468586055",
+    "project_id": "app-yournewsontime",
+    "storage_bucket": "app-yournewsontime.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:262468586055:android:77ae96bed2a82bab78ff62",
+        "android_client_info": {
+          "package_name": "com.example.app_yournewsontime"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdJISfFhIK5YKHLctNnIhGq68Z8iw2L7k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
