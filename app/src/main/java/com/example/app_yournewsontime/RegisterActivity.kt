@@ -24,8 +24,6 @@ class RegisterActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-
         //setup
         setup()
 
@@ -33,7 +31,8 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun setup(){
         title="Autenticacion"
-        val signUpButton = findViewById<Button>(R.id.SingUpbutton)
+        //val signUpButton: Button = findViewById(R.id.get_started_button)
+        val signUpButton: Button = findViewById(R.id.SingUpbutton)
         val EmailEditText= findViewById<EditText>(R.id.EmailEditText)
         val PasswordEditText= findViewById<EditText>(R.id.PasswordEditText)
         signUpButton.setOnClickListener{
@@ -41,11 +40,13 @@ class RegisterActivity : AppCompatActivity() {
             if(EmailEditText.text.isNotEmpty() && PasswordEditText.text.isNotEmpty()){
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(EmailEditText.text.toString(),
                     PasswordEditText.text.toString()).addOnCompleteListener{
-                        if (it.isSuccessful){
-                            news(it.result?.user?.email ?: "")
-                        }else{
-                            showAlert()
-                        }
+                    println("${it.result?.user?.email}")
+                    if (it.isSuccessful){
+
+                        news(it.result?.user?.email ?: "")
+                    }else{
+                        showAlert()
+                    }
                 }
             }
         }

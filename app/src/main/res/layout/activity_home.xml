@@ -45,23 +45,4 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="410dp"
-        android:layout_height="85dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteY="646dp">
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#908C8C" >
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
-        </com.google.android.material.bottomnavigation.BottomNavigationView>
-    </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
