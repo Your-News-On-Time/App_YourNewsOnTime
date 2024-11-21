@@ -33,10 +33,19 @@ class MainActivity : AppCompatActivity() {
         //getStartedButton.setOnClickListener {
           //  setContentView(R.layout.activity_register)
         //}
+        val goToRegisterButton: Button = findViewById(R.id.get_started_button)
+        goToRegisterButton.setOnClickListener {
+            RegisterMethod()
+        }
 
-        
+
+    }
+
+    private fun RegisterMethod() {
+        // Cambia a la vista de registro
+        setContentView(R.layout.activity_register)
+        // Configura los elementos y funcionalidades para el registro
         setup()
-
     }
 
     private fun setup(){
@@ -60,8 +69,10 @@ class MainActivity : AppCompatActivity() {
                         showAlert()
                     }
                 }
+            }else{
+                showAlert()
             }
-            showAlert()
+
         }
 
 
@@ -77,8 +88,10 @@ class MainActivity : AppCompatActivity() {
                         showAlert()
                     }
                 }
+            }else{
+                showAlert()
             }
-            showAlert()
+
         }
 
 
