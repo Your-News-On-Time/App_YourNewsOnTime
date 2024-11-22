@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">App_YourNewsOnTime</string>
+    <string name="prefs_file">com.example.app_yournewsontime.PREFERENCE_FILE_KEY</string>
 </resources>

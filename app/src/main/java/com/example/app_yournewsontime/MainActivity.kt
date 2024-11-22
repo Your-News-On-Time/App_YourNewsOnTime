@@ -1,9 +1,11 @@
 package com.example.app_yournewsontime
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
@@ -20,32 +22,50 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         Log.d("MAIN", "Esto es el main")
-        setContentView(R.layout.activity_main)
 
-        // Lanzamiento de eventos personalizados en nuestra aplicacion
-        val analytics = FirebaseAnalytics.getInstance(this)
-        val bundle = Bundle()
-        bundle.putString("message", "Integracion de Firebase completa")
-        analytics.logEvent("Inicio de sesion",bundle)
 
-        // Encuentra el botón de inicio y configura el listener
-       /// val getStartedButton: Button = findViewById(R.id.get_started_button)
-        //getStartedButton.setOnClickListener {
-          //  setContentView(R.layout.activity_register)
-        //}
-        val goToRegisterButton: Button = findViewById(R.id.get_started_button)
-        goToRegisterButton.setOnClickListener {
-            RegisterMethod()
-        }
+
+            setContentView(R.layout.activity_main)
+
+            // Lanzamiento de eventos personalizados en nuestra aplicacion
+            val analytics = FirebaseAnalytics.getInstance(this)
+            val bundle = Bundle()
+            bundle.putString("message", "Integracion de Firebase completa")
+            analytics.logEvent("Inicio de sesion", bundle)
+
+            // Encuentra el botón de inicio y configura el listener
+            /// val getStartedButton: Button = findViewById(R.id.get_started_button)
+            //getStartedButton.setOnClickListener {
+            //  setContentView(R.layout.activity_register)
+            //}
+            val goToRegisterButton: Button = findViewById(R.id.get_started_button)
+            goToRegisterButton.setOnClickListener {
+                RegisterMethod()
+            }
 
 
     }
+
+
 
     private fun RegisterMethod() {
         // Cambia a la vista de registro
         setContentView(R.layout.activity_register)
         // Configura los elementos y funcionalidades para el registro
         setup()
+        session()
+    }
+
+    @SuppressLint("ResourceType")
+    private fun session(){
+        val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
+        val email = prefs.getString("email",null)
+        if (email != null){
+            val authLayout = findViewById<View>(R.id.authLayout)
+            authLayout.visibility = View.INVISIBLE
+            news(email)
+            finish()
+        }
     }
 
     private fun setup(){
