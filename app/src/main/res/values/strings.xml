@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">App_YourNewsOnTime</string>
     <string name="prefs_file">com.example.app_yournewsontime.PREFERENCE_FILE_KEY</string>
+    <string name="default_web_client_id">FF:94:F3:BD:3C:3B:DC:5C:0B:BA:45:B5:DB:25:F9:63:02:47:53:2E</string>
 </resources>
